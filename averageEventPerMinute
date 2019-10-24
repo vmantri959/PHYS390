@@ -1,0 +1,14 @@
+import numpy
+time_adjust = [] #The number of minutes the water tanker was off, in minutes
+for i in timeMissedDay:
+    time_adjust.append(1440 - i)
+day_array_adjusted = list(numpy.divide(day_events, time_adjust)) #the number of events per minute for each day, adjusted
+
+print(day_array_adjusted)
+def averge(lst):
+    return sum(lst)/len(lst)
+averageEventsPerMinute = averge(day_array_adjusted)
+
+print()
+print()
+print(averageEventsPerMinute)
